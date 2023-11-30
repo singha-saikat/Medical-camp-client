@@ -11,6 +11,7 @@ const CampDetailsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [campDetails, setCampDetails] = useState({});
   
+  
   useEffect(() => {
     async function fetchCampDetails() {
       try {

@@ -13,6 +13,7 @@ const PopularMedicalCamps = () => {
       return res.data;
     },
   });
+  console.log(popularCamps);
 
   return (
     <div>
@@ -49,12 +50,6 @@ const PopularMedicalCamps = () => {
               <p>
                 <strong>Participants:</strong> {camp.participantCount}
               </p>
-              {/* <a
-                href={`/camp-details/${camp.id}`}
-                className="bg-green-500 text-white px-3 py-2 rounded block text-center"
-              >
-                View Details
-              </a> */}
               <div className="flex justify-center mt-2">
                 <Link to={`/camp-details/${camp._id}`}>
                   <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 transition duration-300 ease-in-out transform hover:scale-105">

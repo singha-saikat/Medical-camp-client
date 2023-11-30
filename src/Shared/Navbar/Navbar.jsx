@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { FaStream, FaSignOutAlt } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
-import { MdFavorite } from 'react-icons/md'; // Updated import if MdOutlineWishlist is not available
 import { CgProfile } from 'react-icons/cg';
 import useAuth from "../../Hook/useAuth";
 
@@ -45,17 +44,22 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-1">
             <NavLink to="/" className={navLinkStyles}>Home</NavLink>
             <NavLink to="/availableCamp" className={navLinkStyles}>Available Camps</NavLink>
-            <NavLink to="/allBlogs" className={navLinkStyles}>All Blogs</NavLink>
-            <NavLink to="/featureBlogs" className={navLinkStyles}>Feature Blogs</NavLink>
-            <NavLink to="/wishlist" className="flex items-center gap-2">
-              <MdFavorite className="text-gray-700 hover:text-blue-500" />
-              <span className={navLinkStyles}>Wishlist</span>
-            </NavLink>
+            <NavLink to="/dashboard" className={navLinkStyles}>Dashboard</NavLink>
+            <NavLink to="/contactUs" className={navLinkStyles}>Contact us</NavLink>
+           
           </div>
           <div className="hidden md:flex items-center">
             {user?.email ? (
               <div className="flex items-center gap-2">
-                <CgProfile className="h-6 w-6 text-gray-700" />
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt="User Profile"
+                    className="h-8 w-8 rounded-full object-cover"
+                  />
+                ) : (
+                  <CgProfile className="h-6 w-6 text-gray-700" />
+                )}
                 <span className="text-gray-700 text-sm">{user.displayName}</span>
                 <button onClick={logout} className="flex items-center gap-1 text-red-500 hover:text-red-700">
                   <FaSignOutAlt className="text-lg" />
