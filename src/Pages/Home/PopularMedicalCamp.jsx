@@ -65,12 +65,12 @@ const PopularMedicalCamps = () => {
             </div>
           ))}
         </div>
-        <a
-          href="/available-camps"
+        <Link
+          to="/availableCamp"
           className="bg-red-500 text-white px-4 py-2 rounded block text-center my-4"
         >
           See All Camps
-        </a>
+        </Link>
       </div>
     </div>
   );

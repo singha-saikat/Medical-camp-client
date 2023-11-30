@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import useAuth from "../../Hook/UseAuth";
 import { useState } from "react";
 import { FaStream, FaSignOutAlt } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
 import { MdFavorite } from 'react-icons/md'; // Updated import if MdOutlineWishlist is not available
 import { CgProfile } from 'react-icons/cg';
+import useAuth from "../../Hook/useAuth";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-1">
             <NavLink to="/" className={navLinkStyles}>Home</NavLink>
-            <NavLink to="/addBlogs" className={navLinkStyles}>Add Blogs</NavLink>
+            <NavLink to="/availableCamp" className={navLinkStyles}>Available Camps</NavLink>
             <NavLink to="/allBlogs" className={navLinkStyles}>All Blogs</NavLink>
             <NavLink to="/featureBlogs" className={navLinkStyles}>Feature Blogs</NavLink>
             <NavLink to="/wishlist" className="flex items-center gap-2">
