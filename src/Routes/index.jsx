@@ -7,6 +7,8 @@ import LoginPage from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import AvailableCamps from "../Pages/AvailableCamps/AvailableCamps";
 import Dashboard from "../Layout/Dashboard/Dashboard";
+import AddCampPage from "../Pages/Dashboard/AddCampPage/AddCampPage";
+import ManageCamps from "../Pages/Dashboard/ManageCamp/ManageCamps";
 
 
 const routes = createBrowserRouter([
@@ -43,15 +45,15 @@ const routes = createBrowserRouter([
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
         children: [
-        //   {
-        //     path: '/dashboard/cart',
-        //     element: <Cart></Cart>
-        //   },
-        //   // admin routes
-        //   {
-        //     path: '/dashboard/addItems',
-        //     element: <AdminRoute><AddItems></AddItems></AdminRoute>
-        //   },
+          {
+            path: '/dashboard/add-a-camp',
+            element: <AddCampPage></AddCampPage>
+          },
+        
+          {
+            path: '/dashboard/manageCamps',
+            element: <ManageCamps></ManageCamps>
+          },
         //   {
         //     path: '/dashboard/manageItems',
         //     element: <AdminRoute><ManageItems></ManageItems></AdminRoute>

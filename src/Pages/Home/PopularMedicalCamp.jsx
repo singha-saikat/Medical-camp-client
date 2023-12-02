@@ -13,7 +13,7 @@ const PopularMedicalCamps = () => {
       return res.data;
     },
   });
-  console.log(popularCamps);
+  
 
   return (
     <div>
