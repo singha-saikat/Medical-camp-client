@@ -51,6 +51,7 @@ const SignUp = () => {
             const userInfo = {
               name: data.name,
               email: data.email,
+              role: 'Organizer',
             };
             axiosPublic
               .post("/users", userInfo) // Replace with your API endpoint

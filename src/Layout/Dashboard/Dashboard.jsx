@@ -1,98 +1,100 @@
 import {
-  FaAd,
-  FaBook,
-  FaCalendar,
-  FaEnvelope,
-  FaHome,
-  FaList,
-  FaSearch,
-  FaShoppingCart,
-  FaUsers,
-  FaUtensils,
+  FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, 
+  FaShoppingCart, FaUsers, FaUtensils
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useUserRole from "../../Hook/useUserRole";
 
- // Custom hook to identify user role
-
 const Dashboard = () => {
-  const role = useUserRole(); // Get the current user's role
+  const [role, isLoading] = useUserRole(); 
 
-  // Define NavLinks for different roles
+  if (isLoading) {
+    return <div>Loading...</div>; 
+  }
+
+
   const organizerNavLinks = (
     <>
       <li>
         <NavLink to="/dashboard/adminHome">
-          <FaHome></FaHome>
+          <FaHome />
           Admin Home
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/addItems">
-          <FaUtensils></FaUtensils>
+          <FaUtensils />
           Add Items
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/manageItems">
-          <FaList></FaList>
+          <FaList />
           Manage Items
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/bookings">
-          <FaBook></FaBook>
+          <FaBook />
           Manage Bookings
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/users">
-          <FaUsers></FaUsers>
+          <FaUsers />
           All Users
         </NavLink>
       </li>
     </>
   );
 
+  
   const healthcareProfessionalNavLinks = (
     <>
-      {/* Links specific to Healthcare Professionals */}
-      {/* ... */}
+     
+      <li>
+        <NavLink to="/dashboard/patientManagement">
+          
+          Patient Management
+        </NavLink>
+      </li>
+      
     </>
   );
 
+  
   const participantNavLinks = (
     <>
-        <li>
-            <NavLink to="/dashboard/userHome">
-            <FaHome></FaHome>
-            User Home
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/dashboard/reservation">
-            <FaCalendar></FaCalendar>
-            Reservation
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/dashboard/cart">
-            <FaShoppingCart></FaShoppingCart>
-            My Cart 
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/dashboard/review">
-            <FaAd></FaAd>
-            Add a Review
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/dashboard/bookings">
-            <FaList></FaList>
-            My Bookings
-            </NavLink>
-        </li>
+      <li>
+          <NavLink to="/dashboard/userHome">
+          <FaHome />
+          User Home
+          </NavLink>
+      </li>
+      <li>
+          <NavLink to="/dashboard/reservation">
+          <FaCalendar />
+          Reservation
+          </NavLink>
+      </li>
+      <li>
+          <NavLink to="/dashboard/cart">
+          <FaShoppingCart />
+          My Cart 
+          </NavLink>
+      </li>
+      <li>
+          <NavLink to="/dashboard/review">
+          <FaAd />
+          Add a Review
+          </NavLink>
+      </li>
+      <li>
+          <NavLink to="/dashboard/bookings">
+          <FaList />
+          My Bookings
+          </NavLink>
+      </li>
     </>
   );
 
