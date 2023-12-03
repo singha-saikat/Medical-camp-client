@@ -13,7 +13,7 @@ const CampDetailsCard = ({ campDetails, onJoinClick }) => {
         <p className="text-gray-700 mt-2">{campDetails.dateTime}</p>
         <p className="mt-2">{campDetails.location}</p>
         <p className="mt-2">Audience: {campDetails.audience}</p>
-        <p className="mt-2">Description: {campDetails.description || 'No description provided'}</p>
+        <p className="mt-2">Description: {campDetails.moreDetails || 'No description provided'}</p>
         <button
           className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={onJoinClick}
