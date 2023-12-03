@@ -1,9 +1,10 @@
 import Lottie from "lottie-react";
 import loadingAnimation from "../../../public/animation.json";
 import {
-  FaAd, FaBook, FaCalendar, FaHome, FaList,
-  FaShoppingCart, FaUsers, FaUtensils, FaUserMd, FaRegComments
+    FaHome, FaList,
+    FaUtensils,  FaRegComments,FaRegRegistered
 } from 'react-icons/fa';
+import { ImProfile } from "react-icons/im";
 import { NavLink, Outlet } from 'react-router-dom';
 import useUserRole from '../../Hook/useUserRole';
 
@@ -36,30 +37,20 @@ const Dashboard = () => {
           Manage Camps
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/dashboard/bookings" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaBook className="mr-3" />
-          Manage Bookings
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/dashboard/users" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaUsers className="mr-3" />
-          All Users
-        </NavLink>
-      </li>
+      
     </>
   );
 
   const healthcareProfessionalNavLinks = (
     <>
          <li>
-        <NavLink to="/dashboard/patientManagement" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaUserMd className="mr-3" /> Patient Management
+        <NavLink to="/dashboard/healthcareProfessionalHome" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
+          <FaHome className="mr-3" /> 
+          healthcareProfessionalHome
         </NavLink>
       </li>
       <li>
-        <NavLink to="/professional-profile" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
+        <NavLink to="/dashboard/professional-profile" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
           <FaRegComments className="mr-3" /> Profile Management
         </NavLink>
       </li>
@@ -75,29 +66,18 @@ const Dashboard = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/reservation"className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaCalendar className="mr-3" />
-          Reservation
+        <NavLink to="/dashboard/participant-profile"className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
+          <ImProfile className="mr-3" />
+          Profile Management
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/cart" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaShoppingCart  className="mr-3" />
-          My Cart
+        <NavLink to="/dashboard/registered-camps" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
+          <FaRegRegistered  className="mr-3" />
+          Registered Camps
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/dashboard/review" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaAd className="mr-3" />
-          Add a Review
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/dashboard/bookings" className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200">
-          <FaList  className="mr-3"/>
-          My Bookings
-        </NavLink>
-      </li>
+      
     </>
   );
 

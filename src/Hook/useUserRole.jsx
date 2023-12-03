@@ -34,7 +34,7 @@ const useUserRole = () => {
   }
 
   // If none of the conditions are met, it simply returns without a default value
-  return ["Participant", isLoading];
+  return ["Participant", isLoading,userType];
 };
 
 export default useUserRole;

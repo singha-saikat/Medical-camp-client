@@ -9,6 +9,12 @@ import AvailableCamps from "../Pages/AvailableCamps/AvailableCamps";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import AddCampPage from "../Pages/Dashboard/AddCampPage/AddCampPage";
 import ManageCamps from "../Pages/Dashboard/ManageCamp/ManageCamps";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import ParticipantProfilePage from "../Pages/Dashboard/ParticipantProfilePage/ParticipantProfilePage";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import HealthcareProfessionalHome from "../Pages/Dashboard/healthcareProfessionalHome/healthcareProfessionalHome";
+import HealthcareProfessionalProfilePage from "../Pages/Dashboard/HealthcareProfessionalProfilePage/HealthcareProfessionalProfilePage";
+// import RegisteredCamps from "../Pages/Dashboard/Registered Camps/RegisteredCamps";
 
 
 const routes = createBrowserRouter([
@@ -46,6 +52,10 @@ const routes = createBrowserRouter([
         element:<Dashboard></Dashboard>,
         children: [
           {
+            path: '/dashboard/adminHome',
+            element: <AdminHome></AdminHome>
+          },
+          {
             path: '/dashboard/add-a-camp',
             element: <AddCampPage></AddCampPage>
           },
@@ -54,6 +64,26 @@ const routes = createBrowserRouter([
             path: '/dashboard/manageCamps',
             element: <ManageCamps></ManageCamps>
           },
+          {
+            path: '/dashboard/userHome',
+            element: <UserHome></UserHome>
+          },
+          {
+            path: '/dashboard/participant-profile',
+            element: <ParticipantProfilePage></ParticipantProfilePage>
+          },
+          {
+            path: '/dashboard/healthcareProfessionalHome',
+            element: <HealthcareProfessionalHome></HealthcareProfessionalHome>
+          },
+          {
+            path: '/dashboard/professional-profile',
+            element: <HealthcareProfessionalProfilePage></HealthcareProfessionalProfilePage>
+          },
+          // {
+          //   path: '/dashboard/registered-camps',
+          //   element: <RegisteredCamps></RegisteredCamps>
+          // },
         //   {
         //     path: '/dashboard/manageItems',
         //     element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
