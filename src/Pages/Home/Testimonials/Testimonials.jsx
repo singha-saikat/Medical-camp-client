@@ -15,7 +15,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     axios
-      .get("https://medical-camp-server-xi.vercel.app/reviews")
+      .get("http://localhost:4000/reviews")
       .then((response) => {
         setReviews(response.data);
       })

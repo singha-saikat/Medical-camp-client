@@ -111,6 +111,15 @@ const Dashboard = () => {
           Registered Camps
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/dashboard/feedback-ratings"
+          className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200"
+        >
+          <FaRegRegistered className="mr-3" />
+          FeedBack & Ratings
+        </NavLink>
+      </li>
     </>
   );
 

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import toast from "react-hot-toast";
+import useAuth from "../../Hook/useAuth";
 
 const JoinCampModal = ({ onClose, campDetails }) => {
+  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [formData, setFormData] = useState({
     name: "",
@@ -13,6 +15,10 @@ const JoinCampModal = ({ onClose, campDetails }) => {
     camp_fees: "",
     emergencyContact: "",
     healthInfo: "",
+    registered: campDetails.name,
+    email: user.email,
+    date: campDetails.dateTime,
+    location:campDetails.location,
   });
 
   const handleFormChange = (e) => {
@@ -28,7 +34,7 @@ const JoinCampModal = ({ onClose, campDetails }) => {
     axiosSecure.post("/joinCamp", formData).then((res) => {
       if (res.data.insertedId) {
         console.log("info added to the database");
-        toast.success('Successfully data inserted!') 
+        toast.success("Successfully data inserted!");
       }
     });
 

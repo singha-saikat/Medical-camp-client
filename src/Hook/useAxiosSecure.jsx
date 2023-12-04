@@ -4,7 +4,7 @@ import useAuth from "./useAuth";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'https://medical-camp-server-xi.vercel.app'
+    baseURL: 'http://localhost:4000'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate();

@@ -7,7 +7,7 @@ const UpcomingCamp = () => {
 
   useEffect(() => {
     axios
-      .get("https://medical-camp-server-xi.vercel.app/upComingCamp")
+      .get("http://localhost:4000/upComingCamp")
       .then((response) => {
         setUpComingCamp(response.data);
       })

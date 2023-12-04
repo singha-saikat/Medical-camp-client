@@ -16,7 +16,10 @@ import HealthcareProfessionalHome from "../Pages/Dashboard/healthcareProfessiona
 import HealthcareProfessionalProfilePage from "../Pages/Dashboard/HealthcareProfessionalProfilePage/HealthcareProfessionalProfilePage";
 import ContactUs from "../Pages/Home/ContactUs/ContactUs";
 import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes.jsx"
-// import RegisteredCamps from "../Pages/Dashboard/Registered Camps/RegisteredCamps";
+import RegisteredCamps from "../Pages/Dashboard/Registered Camps/RegisteredCamps.jsx";
+import Feedback from "../Pages/Dashboard/Feedback and Reatings/Feedback.jsx";
+
+
 
 
 const routes = createBrowserRouter([
@@ -85,6 +88,14 @@ const routes = createBrowserRouter([
           {
             path: '/dashboard/professional-profile',
             element:<PrivateRoutes><HealthcareProfessionalProfilePage></HealthcareProfessionalProfilePage></PrivateRoutes> 
+          },
+          {
+            path: '/dashboard/registered-camps',
+            element:<PrivateRoutes><RegisteredCamps></RegisteredCamps></PrivateRoutes> 
+          },
+          {
+            path: '/dashboard/feedback-ratings',
+            element:<PrivateRoutes><Feedback></Feedback></PrivateRoutes> 
           },
   
         ]

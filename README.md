@@ -7,7 +7,7 @@ Below are bullet points that represent the features of my MediAssist Hub applica
 To deploy this project run
 
 ```bash
- https://
+ https://medical-camp-626a9.web.app/
 ```
 
 ## Features
