@@ -14,6 +14,7 @@ import ParticipantProfilePage from "../Pages/Dashboard/ParticipantProfilePage/Pa
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import HealthcareProfessionalHome from "../Pages/Dashboard/healthcareProfessionalHome/healthcareProfessionalHome";
 import HealthcareProfessionalProfilePage from "../Pages/Dashboard/HealthcareProfessionalProfilePage/HealthcareProfessionalProfilePage";
+import ContactUs from "../Pages/Home/ContactUs/ContactUs";
 // import RegisteredCamps from "../Pages/Dashboard/Registered Camps/RegisteredCamps";
 
 
@@ -34,6 +35,10 @@ const routes = createBrowserRouter([
         {
             path:'/availableCamp',
             element: <AvailableCamps/>,
+        },
+        {
+            path:'/contactUs',
+            element: <ContactUs/>,
         },
         {
             path:'/login',

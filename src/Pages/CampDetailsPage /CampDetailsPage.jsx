@@ -4,6 +4,7 @@ import useAxiosPublicApi from "../../Hook/useAxiosPublicApi";
 import Container from "../../Shared/Conteinar/Conteinar";
 import CampDetailsCard from "./CampDetailsCard";
 import JoinCampModal from "./JoinCampModal";
+import { Helmet } from "react-helmet-async";
 
 const CampDetailsPage = () => {
   const params = useParams();
@@ -29,7 +30,11 @@ const CampDetailsPage = () => {
   };
 
   return (
-    <Container>
+    <>
+     <Helmet>
+        <title>MediAssist Hub|CampDetails</title>
+      </Helmet>
+     <Container>
       <div className="camp-details-page mt-28">
         <CampDetailsCard campDetails={campDetails} onJoinClick={toggleModal} />
 
@@ -41,6 +46,8 @@ const CampDetailsPage = () => {
         )}
       </div>
     </Container>
+    </>
+   
   );
 };
 

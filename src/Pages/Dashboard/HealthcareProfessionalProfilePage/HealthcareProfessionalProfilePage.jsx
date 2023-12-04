@@ -1,10 +1,10 @@
-import { useState } from "react";
-import useUserData from "../../../Hook/useUserData";
-import Modal from "react-modal";
 import Lottie from "lottie-react";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import Modal from "react-modal";
 import loadingAnimation from "../../../../public/animation.json";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
-import toast from "react-hot-toast";
+import useUserData from "../../../Hook/useUserData";
 
 const HealthcareProfessionalProfilePage = () => {
   const [userData, isLoading, isError, refetch] = useUserData();

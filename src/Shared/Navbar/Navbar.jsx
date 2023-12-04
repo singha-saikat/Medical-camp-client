@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-3 md:py-4">
           <NavLink to="/" className="flex items-center py-2">
             <FaStream className="h-8 w-8 text-gray-700 mr-2" />
-            <span className="font-semibold text-gray-700 text-lg">StoryStream</span>
+            <span className="font-semibold text-gray-700 text-lg">MediAssist Hub</span>
           </NavLink>
           <div className="md:hidden">
             <button onClick={toggleMobileMenu} className="mobile-menu-button">
