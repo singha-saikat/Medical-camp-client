@@ -55,7 +55,7 @@ const SignUp = () => {
               // role: 'HealthcareProfessional',
             };
             axiosPublic
-              .post("/users", userInfo) // Replace with your API endpoint
+              .post("/users", userInfo) 
               .then((res) => {
                 if (res.data.insertedId) {
                   event.target.reset();

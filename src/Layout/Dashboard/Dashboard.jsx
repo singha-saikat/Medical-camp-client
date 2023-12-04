@@ -3,11 +3,11 @@ import loadingAnimation from "../../../public/animation.json";
 import {
   FaHome,
   FaList,
-  FaUtensils,
   FaRegComments,
   FaRegRegistered,
 } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
+import { MdOutlineManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useUserRole from "../../Hook/useUserRole";
 import { Helmet } from "react-helmet-async";
@@ -44,7 +44,7 @@ const Dashboard = () => {
           to="/dashboard/add-a-camp"
           className="flex items-center py-2 px-3 rounded hover:bg-blue-300 transition-colors duration-200"
         >
-          <FaUtensils className="mr-3" />
+          <MdOutlineManageAccounts className="mr-3" />
           Add A Camp
         </NavLink>
       </li>

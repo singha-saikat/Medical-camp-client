@@ -15,6 +15,7 @@ import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import HealthcareProfessionalHome from "../Pages/Dashboard/healthcareProfessionalHome/healthcareProfessionalHome";
 import HealthcareProfessionalProfilePage from "../Pages/Dashboard/HealthcareProfessionalProfilePage/HealthcareProfessionalProfilePage";
 import ContactUs from "../Pages/Home/ContactUs/ContactUs";
+import PrivateRoutes from "../Routes/PrivateRoutes/PrivateRoutes.jsx"
 // import RegisteredCamps from "../Pages/Dashboard/Registered Camps/RegisteredCamps";
 
 
@@ -54,54 +55,37 @@ const routes = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
         children: [
           {
             path: '/dashboard/adminHome',
-            element: <AdminHome></AdminHome>
+            element:<PrivateRoutes> <AdminHome></AdminHome></PrivateRoutes>
           },
           {
             path: '/dashboard/add-a-camp',
-            element: <AddCampPage></AddCampPage>
+            element: <PrivateRoutes><AddCampPage></AddCampPage></PrivateRoutes>
           },
         
           {
             path: '/dashboard/manageCamps',
-            element: <ManageCamps></ManageCamps>
+            element:<PrivateRoutes><ManageCamps></ManageCamps></PrivateRoutes> 
           },
           {
             path: '/dashboard/userHome',
-            element: <UserHome></UserHome>
+            element:<PrivateRoutes><UserHome></UserHome></PrivateRoutes>  
           },
           {
             path: '/dashboard/participant-profile',
-            element: <ParticipantProfilePage></ParticipantProfilePage>
+            element: <PrivateRoutes><ParticipantProfilePage></ParticipantProfilePage></PrivateRoutes> 
           },
           {
             path: '/dashboard/healthcareProfessionalHome',
-            element: <HealthcareProfessionalHome></HealthcareProfessionalHome>
+            element:<PrivateRoutes><HealthcareProfessionalHome></HealthcareProfessionalHome></PrivateRoutes>  
           },
           {
             path: '/dashboard/professional-profile',
-            element: <HealthcareProfessionalProfilePage></HealthcareProfessionalProfilePage>
+            element:<PrivateRoutes><HealthcareProfessionalProfilePage></HealthcareProfessionalProfilePage></PrivateRoutes> 
           },
-          // {
-          //   path: '/dashboard/registered-camps',
-          //   element: <RegisteredCamps></RegisteredCamps>
-          // },
-        //   {
-        //     path: '/dashboard/manageItems',
-        //     element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
-        //   },
-        //   {
-        //     path: '/dashboard/updateItem/:id',
-        //     element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-        //     loader: ({params}) => fetch(`http://localhost:4000/menu/${params.id}`)
-        //   },
-        //   {
-        //     path: '/dashboard/users',
-        //     element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-        //   },
   
         ]
       }
