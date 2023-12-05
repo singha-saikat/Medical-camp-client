@@ -17,7 +17,7 @@ const PopularMedicalCamps = () => {
 
   return (
     <div>
-      <SectionTitle
+      <SectionTitle className="mt-12"
         subHeading={"Showcasing Our Commitment to Public Health"}
         heading={"Popular Medical Camp"}
       ></SectionTitle>

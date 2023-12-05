@@ -8,10 +8,10 @@ import banner_4 from "../../assets/Banner/banner-4.jpg";
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 const Banner = () => {
   return (
-    <div className="h-[80vh] bg-hero  ">
+    <div className="h-[80vh] bg-hero">
       <div className="flex flex-col md:flex-row items-center justify-center pt-12 px-4">
-        <div className="flex-1 px-2">
-          <h1 className="text-3xl md:text-5xl text-center mb-2 text-blue-500 ">
+        <div className="flex-1 px-2 mt-8 md:mt-0">
+          <h1 className="text-3xl md:text-5xl text-center mb-2 text-blue-500">
             Manage Medical Camps with Ease
           </h1>
           <p className="text-center">
@@ -20,10 +20,10 @@ const Banner = () => {
             healthcare services for your community.
           </p>
         </div>
-        <div className="hidden md:inline flex-1 p-0 md:p-28 ">
+        <div className="hidden md:inline flex-1 p-0 md:p-28">
           <AutoplaySlider
             play={true}
-            cancelOnInteraction={false} // should stop playing on user interaction
+            cancelOnInteraction={false}
             interval={6000}
           >
             <div data-src={banner_1} />
@@ -31,6 +31,9 @@ const Banner = () => {
             <div data-src={banner_3} />
             <div data-src={banner_4} />
           </AutoplaySlider>
+        </div>
+        <div className="md:hidden flex-1 p-0 md:p-28">
+          <img src={banner_2} alt="Banner Image" className="w-full" />
         </div>
       </div>
     </div>

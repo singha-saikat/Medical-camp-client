@@ -7,7 +7,7 @@ import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import toast from "react-hot-toast";
 
 const ParticipantProfilePage = () => {
-  const [userData, isLoading, isError,refetch] = useUserData();
+  const [userData, isLoading, isError, refetch] = useUserData();
   const [formData, setFormData] = useState({ ...userData });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const axiosSecure = useAxiosSecure();
@@ -20,20 +20,21 @@ const ParticipantProfilePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Extract form data from formData state
       const { name, attendedCamps, medicalInterests } = formData;
-      const email = userData?.email
+      const email = userData?.email;
 
       const updateInfo = {
         name,
         attendedCamps,
         medicalInterests,
-        email
-        
+        email,
       };
       console.log(updateInfo);
 
-      const response = await axiosSecure.patch(`/update-participant-profile?email=${userData?.email}`, updateInfo);
+      const response = await axiosSecure.patch(
+        `/update-participant-profile?email=${userData?.email}`,
+        updateInfo
+      );
 
       if (response.status === 200) {
         setIsModalOpen(false);
@@ -80,7 +81,6 @@ const ParticipantProfilePage = () => {
                 <p className="mt-1 text-lg text-gray-900">{userData.email}</p>
               </div>
 
-              {/* Additional input fields for attended camps and medical interests */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">
                   Attended Camps
@@ -89,7 +89,7 @@ const ParticipantProfilePage = () => {
                   type="text"
                   id="attendedCamps"
                   name="attendedCamps"
-                  defaultValue={'Wellness and Care Camp'}
+                  defaultValue={"Wellness and Care Camp"}
                   value={formData.attendedCamps}
                   onChange={handleInputChange}
                   className="mt-1 p-2 w-full rounded-md"
@@ -102,7 +102,7 @@ const ParticipantProfilePage = () => {
                 <input
                   type="text"
                   id="medicalInterests"
-                  defaultValue={'Pediatric Health Fair'}
+                  defaultValue={"Pediatric Health Fair"}
                   name="medicalInterests"
                   value={formData.medicalInterests}
                   onChange={handleInputChange}
@@ -110,7 +110,6 @@ const ParticipantProfilePage = () => {
                 />
               </div>
 
-              {/* Button to open the modal */}
               <button
                 type="button"
                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
@@ -119,7 +118,6 @@ const ParticipantProfilePage = () => {
                 Update Profile
               </button>
 
-              {/* Modal for profile update */}
               <Modal
                 isOpen={isModalOpen}
                 onRequestClose={() => setIsModalOpen(false)}
@@ -127,9 +125,11 @@ const ParticipantProfilePage = () => {
               >
                 <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
                 <form onSubmit={handleSubmit}>
-                  {/* Input fields for updating profile details */}
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Name
                     </label>
                     <input
@@ -143,7 +143,10 @@ const ParticipantProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="attendedCamps" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="attendedCamps"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Attended Camps
                     </label>
                     <input
@@ -156,7 +159,10 @@ const ParticipantProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="medicalInterests" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="medicalInterests"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Medical Interests
                     </label>
                     <input

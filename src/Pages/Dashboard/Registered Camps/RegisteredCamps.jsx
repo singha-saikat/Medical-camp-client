@@ -1,4 +1,4 @@
-import  { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useTable } from "react-table";
 import useAuth from "../../../Hook/useAuth";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
@@ -18,9 +18,9 @@ const RegisteredCamps = () => {
       }
     }
     fetchCampDetails();
-  }, [user.email,axiosSecure]);
+  }, [user.email, axiosSecure]);
   console.log("userInfo", userInfo);
-  // Define columns for react-table
+
   const columns = useMemo(
     () => [
       {
@@ -39,20 +39,13 @@ const RegisteredCamps = () => {
         Header: "Location",
         accessor: "location",
       },
-     
     ],
     []
   );
 
-  // Prepare table instance
   const tableInstance = useTable({ columns, data: userInfo });
 
-  const {
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = tableInstance;
+  const { getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
   return (
     <div>

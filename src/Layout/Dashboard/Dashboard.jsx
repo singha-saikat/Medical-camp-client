@@ -1,11 +1,6 @@
 import Lottie from "lottie-react";
 import loadingAnimation from "../../../public/animation.json";
-import {
-  FaHome,
-  FaList,
-  FaRegComments,
-  FaRegRegistered,
-} from "react-icons/fa";
+import { FaHome, FaList, FaRegComments, FaRegRegistered } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { FcFeedback } from "react-icons/fc";

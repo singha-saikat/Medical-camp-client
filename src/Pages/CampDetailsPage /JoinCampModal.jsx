@@ -39,7 +39,7 @@ const JoinCampModal = ({ onClose, campDetails }) => {
     });
 
     console.log(formData);
-    onClose(); // Close modal after submission
+    onClose(); 
   };
 
   return (

@@ -1,7 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Rating from "react-rating-stars-component";
 import "swiper/css";
@@ -9,20 +6,22 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Container from "../../../Shared/Conteinar/Conteinar";
 import SectionTitle from "../../../Shared/Section Tittle/SectionTittle";
+import useAxiosPublicApi from "../../../Hook/useAxiosPublicApi";
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
+  const axiosPublic = useAxiosPublicApi();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/reviews")
+    axiosPublic
+      .get("/reviews")
       .then((response) => {
         setReviews(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []);
+  }, [axiosPublic]);
 
   return (
     <Container>

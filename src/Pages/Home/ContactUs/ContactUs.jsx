@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import  { useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -8,24 +8,23 @@ import Container from "../../../Shared/Conteinar/Conteinar";
 import useAxiosPublicApi from "../../../Hook/useAxiosPublicApi";
 import toast from "react-hot-toast";
 
-
 function ContactUs() {
-  // Coordinates for your website's location
   const position = [23.301476488691346, 91.11571197712456];
   const axiosPublic = useAxiosPublicApi();
 
-  // State for form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    const info ={
-      name,email,subject,message
-    }
+    const info = {
+      name,
+      email,
+      subject,
+      message,
+    };
     axiosPublic
       .post("/contact-info", info)
       .then((res) => {
@@ -121,7 +120,7 @@ function ContactUs() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             <Marker position={position}>
-              <Popup>Your website's location. Easily customizable.</Popup>
+              <Popup>Our website's location. Easily customizable.</Popup>
             </Marker>
           </MapContainer>
         </div>

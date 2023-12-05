@@ -19,11 +19,16 @@ const HealthcareProfessionalProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
-        
-      const { name, medicalSpecialty, certifications, contactInformation, impact } = formData;
-      const email = userData?.email
+      const {
+        name,
+        medicalSpecialty,
+        certifications,
+        contactInformation,
+        impact,
+      } = formData;
+      const email = userData?.email;
       const updateInfo = {
         name,
         email,
@@ -33,7 +38,10 @@ const HealthcareProfessionalProfilePage = () => {
         impact,
       };
 
-      const response = await axiosSecure.patch(`/update-healthcare-professional-profile?email=${userData?.email}`, updateInfo);
+      const response = await axiosSecure.patch(
+        `/update-healthcare-professional-profile?email=${userData?.email}`,
+        updateInfo
+      );
 
       if (response.status === 200) {
         setIsModalOpen(false);
@@ -41,7 +49,6 @@ const HealthcareProfessionalProfilePage = () => {
         refetch();
       }
     } catch (error) {
-      
       toast.error("Error updating healthcare professional profile");
     }
   };
@@ -80,7 +87,6 @@ const HealthcareProfessionalProfilePage = () => {
                 <p className="mt-1 text-lg text-gray-900">{userData.email}</p>
               </div>
 
-              {/* Additional input fields for healthcare professionals */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">
                   Medical Specialty
@@ -136,7 +142,6 @@ const HealthcareProfessionalProfilePage = () => {
                 />
               </div>
 
-              {/* Button to open the modal */}
               <button
                 type="button"
                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
@@ -145,7 +150,6 @@ const HealthcareProfessionalProfilePage = () => {
                 Update Profile
               </button>
 
-              {/* Modal for profile update */}
               <Modal
                 isOpen={isModalOpen}
                 onRequestClose={() => setIsModalOpen(false)}
@@ -153,9 +157,11 @@ const HealthcareProfessionalProfilePage = () => {
               >
                 <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
                 <form onSubmit={handleSubmit}>
-                  {/* Input fields for updating profile details */}
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Name
                     </label>
                     <input
@@ -168,7 +174,10 @@ const HealthcareProfessionalProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="medicalSpecialty" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="medicalSpecialty"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Medical Specialty
                     </label>
                     <input
@@ -181,7 +190,10 @@ const HealthcareProfessionalProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="certifications" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="certifications"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Certifications
                     </label>
                     <input
@@ -194,7 +206,10 @@ const HealthcareProfessionalProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="contactInformation" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="contactInformation"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Contact Information
                     </label>
                     <input
@@ -207,7 +222,10 @@ const HealthcareProfessionalProfilePage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="impact" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="impact"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Impact
                     </label>
                     <input

@@ -78,10 +78,10 @@ const Navbar = () => {
       <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <ul className="space-y-2">
           <li><NavLink to="/" className={navLinkStyles}>Home</NavLink></li>
-          <li><NavLink to="/addBlogs" className={navLinkStyles}>Add Blogs</NavLink></li>
-          <li><NavLink to="/allBlogs" className={navLinkStyles}>All Blogs</NavLink></li>
+          <li><NavLink to="/availableCamp" className={navLinkStyles}>Available Camps</NavLink></li>
+          <li><NavLink to="/dashboard" className={navLinkStyles}>Dashboard</NavLink></li>
           <li><NavLink to="/featureBlogs" className={navLinkStyles}>Feature Blogs</NavLink></li>
-          <li><NavLink to="/wishlist" className={navLinkStyles}>Wishlist</NavLink></li>
+          <li><NavLink to="/contactUs" className={navLinkStyles}>Contact us</NavLink></li>
         </ul>
       </div>
     </nav>

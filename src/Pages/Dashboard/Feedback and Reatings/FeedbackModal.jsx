@@ -80,7 +80,7 @@ const FeedbackModal = ({ onClose }) => {
             type="datetime-local"
             id="scheduledDateTime"
             name="date"
-            value={formData.date} 
+            value={formData.date}
             onChange={handleFormChange}
             className="w-full border rounded-md px-3 py-2"
           />

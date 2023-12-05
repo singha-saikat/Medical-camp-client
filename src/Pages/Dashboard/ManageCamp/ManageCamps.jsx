@@ -7,17 +7,12 @@ import Lottie from "lottie-react";
 import loadingAnimation from "../../../../public/animation.json";
 import { useAvailableCamps } from "../../../Hook/useAvailableCamps";
 
-
 const ManageCamps = () => {
-  // const navigate = useNavigate();
-  const { data: availableCamp = [],isLoading,refetch } = useAvailableCamps();
+  const { data: availableCamp = [], isLoading, refetch } = useAvailableCamps();
   const axiosSecure = useAxiosSecure();
-   const [selectedCamp, setSelectedCamp] = useState(null);
+  const [selectedCamp, setSelectedCamp] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
- 
-  
 
-  // Create state for form data
   const [formData, setFormData] = useState({
     name: "",
     camp_fees: "",
@@ -33,7 +28,6 @@ const ManageCamps = () => {
     setSelectedCamp(camp);
     setFormData({
       name: camp.name,
-      // Initialize other form fields with camp data
     });
     setIsModalOpen(true);
   };
@@ -46,7 +40,7 @@ const ManageCamps = () => {
     });
   };
 
-  const handleSubmit = async (e,) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -61,12 +55,18 @@ const ManageCamps = () => {
       const comprehensiveDetails = e.target.comprehensiveDetails.value;
       const moreDetails = e.target.moreDetails.value;
 
-      
-    
-      
-const updateForm = {
-  name,image,camp_fees,dateTime,location,services,professionals,participantCount,comprehensiveDetails,moreDetails
-}
+      const updateForm = {
+        name,
+        image,
+        camp_fees,
+        dateTime,
+        location,
+        services,
+        professionals,
+        participantCount,
+        comprehensiveDetails,
+        moreDetails,
+      };
       const response = await axiosSecure.patch(
         `/update-camp/${selectedCamp._id}`,
         updateForm
@@ -85,7 +85,6 @@ const updateForm = {
         refetch();
       }
     } catch (error) {
-      // Handle error, show an alert or log it
       console.error("Error updating camp:", error);
     }
   };
@@ -113,14 +112,12 @@ const updateForm = {
           });
           refetch();
         } catch (error) {
-          // Handle error, show an alert or log it
           console.error("Error deleting camp:", error);
         }
       }
     });
   };
 
-  // Define your columns
   const columns = [
     {
       name: "Camp Name",
@@ -175,7 +172,12 @@ const updateForm = {
     <div className="max-w-6xl mx-auto p-4">
       <h1 className="text-2xl font-semibold mb-4">Manage Camps</h1>
       {isLoading ? (
-         <Lottie className='flex justify-center items-center min-h-[70%]' animationData={loadingAnimation} width={500} height={350} />
+        <Lottie
+          className="flex justify-center items-center min-h-[70%]"
+          animationData={loadingAnimation}
+          width={500}
+          height={350}
+        />
       ) : (
         <DataTable
           columns={columns}
@@ -208,7 +210,7 @@ const updateForm = {
                 onChange={handleFormChange}
                 className="input input-bordered w-full"
               />
-              
+
               <input
                 type="text"
                 name="camp_fees"
@@ -290,7 +292,6 @@ const updateForm = {
                 onChange={handleFormChange}
                 className="input input-bordered w-full"
               />
-              {/* Add other form fields as needed */}
               <div className="modal-action">
                 <button type="submit" className="btn btn-primary">
                   Update

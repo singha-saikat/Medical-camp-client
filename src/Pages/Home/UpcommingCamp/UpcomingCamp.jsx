@@ -1,20 +1,21 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import useAxiosPublicApi from "../../../Hook/useAxiosPublicApi";
 import SectionTitle from "../../../Shared/Section Tittle/SectionTittle";
 
 const UpcomingCamp = () => {
   const [UpComingCamp, setUpComingCamp] = useState([]);
+  const axiosPublic = useAxiosPublicApi();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/upComingCamp")
+    axiosPublic
+      .get("/upComingCamp")
       .then((response) => {
         setUpComingCamp(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []);
+  }, [axiosPublic]);
   return (
     <div className="container mx-auto py-8">
       <SectionTitle
